@@ -4,40 +4,40 @@ using namespace std;
 class Pair
 {
 private:
-	int int_num; //объявили целочисленную переменную 
-	double double_num; //объявили переменную типа double
+	int int_num; //Г®ГЎГєГїГўГЁГ«ГЁ Г¶ГҐГ«Г®Г·ГЁГ±Г«ГҐГ­Г­ГіГѕ ГЇГҐГ°ГҐГ¬ГҐГ­Г­ГіГѕ 
+	double double_num; //Г®ГЎГєГїГўГЁГ«ГЁ ГЇГҐГ°ГҐГ¬ГҐГ­Г­ГіГѕ ГІГЁГЇГ  double
 public:
-	explicit Pair() : int_num(0), double_num(0) {} //конструктор без параметров
-	Pair(const int a, const double b) //конструктор с параметрами
+	explicit Pair() : int_num(0), double_num(0) {} //ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЎГҐГ§ ГЇГ Г°Г Г¬ГҐГІГ°Г®Гў
+	Pair(const int a, const double b) //ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° Г± ГЇГ Г°Г Г¬ГҐГІГ°Г Г¬ГЁ
 	{
 		int_num = a;
 		double_num = b;
 	}
-	friend istream& operator>> (istream& in, Pair& numbers) //перегрузка опрератора ввода
+	friend istream& operator>> (istream& in, Pair& numbers) //ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГ°ГҐГ°Г ГІГ®Г°Г  ГўГўГ®Г¤Г 
 	{
-		cout << "Ввод чисел класса Pair" << endl;
-		cout << "Введите ЦЕЛОЕ число: ";
-		in >> numbers.int_num; //считываем целое число
-		cout << "Введите ВЕЩЕСТВЕННОЕ число: ";
-		in >> numbers.double_num; //считываем вещественное число
+		cout << "Г‚ГўГ®Г¤ Г·ГЁГ±ГҐГ« ГЄГ«Г Г±Г±Г  Pair" << endl;
+		cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г–Г…Г‹ГЋГ… Г·ГЁГ±Г«Г®: ";
+		in >> numbers.int_num; //Г±Г·ГЁГІГ»ГўГ ГҐГ¬ Г¶ГҐГ«Г®ГҐ Г·ГЁГ±Г«Г®
+		cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г‚Г…Г™Г…Г‘Г’Г‚Г…ГЌГЌГЋГ… Г·ГЁГ±Г«Г®: ";
+		in >> numbers.double_num; //Г±Г·ГЁГІГ»ГўГ ГҐГ¬ ГўГҐГ№ГҐГ±ГІГўГҐГ­Г­Г®ГҐ Г·ГЁГ±Г«Г®
 		return in;
 	}
-	friend ostream& operator<< (ostream& out, const Pair& numbers) //перегрузка опрератора вывода
+	friend ostream& operator<< (ostream& out, const Pair& numbers) //ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГ°ГҐГ°Г ГІГ®Г°Г  ГўГ»ГўГ®Г¤Г 
 	{
 		out << numbers.int_num << ":" << numbers.double_num;
 		return out;
 	}
-	bool operator== (const Pair& numbers) const //перегрузка опрератора сравнения ==
+	bool operator== (const Pair& numbers) const //ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГ°ГҐГ°Г ГІГ®Г°Г  Г±Г°Г ГўГ­ГҐГ­ГЁГї ==
 	{
 		return (int_num == numbers.int_num) && (double_num == numbers.double_num);
 	}
-	bool operator!= (const Pair& numbers) const //перегрузка опрератора сравнения !=
+	bool operator!= (const Pair& numbers) const //ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГ°ГҐГ°Г ГІГ®Г°Г  Г±Г°Г ГўГ­ГҐГ­ГЁГї !=
 	{
 		return !((int_num == numbers.int_num) && (double_num == numbers.double_num));
 	}
-	Pair& operator= (const Pair& numbers) //перегрузка опереатора присваивания
+	Pair& operator= (const Pair& numbers) //ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГҐГ°ГҐГ ГІГ®Г°Г  ГЇГ°ГЁГ±ГўГ ГЁГўГ Г­ГЁГї
 	{
-		if (this == &numbers) //если элементы равны, возвращаем текущий
+		if (this == &numbers) //ГҐГ±Г«ГЁ ГЅГ«ГҐГ¬ГҐГ­ГІГ» Г°Г ГўГ­Г», ГўГ®Г§ГўГ°Г Г№Г ГҐГ¬ ГІГҐГЄГіГ№ГЁГ©
 		{
 			return *this;
 		}
@@ -45,5 +45,5 @@ public:
 		double_num = numbers.double_num;
 		return *this;
 	}
-	~Pair() {}
+	~Pair() { }
 };
